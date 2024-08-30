@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados da Busca</title>
+</head>
+<body>
+    <h1>Resultados da Busca</h1>
+    {% if empresa %}
+        <p><strong>CNPJ:</strong> {{ empresa['cnpj'] }}</p>
+        <p><strong>Razão Social:</strong> {{ empresa['nome'] }}</p>
+        <p><strong>Nome Fantasia:</strong> {{ empresa['fantasia'] }}</p>
+        <p><strong>Atividade Principal:</strong> {{ empresa['atividade_principal'][0]['text'] }}</p>
+        <p><strong>Endereço:</strong> {{ empresa['logradouro'] }}, {{ empresa['numero'] }}, {{ empresa['bairro'] }}</p>
+        <p><strong>Cidade:</strong> {{ empresa['municipio'] }}</p>
+        <p><strong>Estado:</strong> {{ empresa['uf'] }}</p>
+    {% else %}
+        <p>Nenhuma empresa encontrada.</p>
+    {% endif %}
+</body>
+</html>
